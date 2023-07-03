@@ -26,7 +26,7 @@ function draw(){
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
     // Draws lines from one point on the left of the canvas (50px left of the border) to several points on the right on the canvas (on the border)
-    for(let i=0; i<=nbLines; i++){
+    for(let i = 0; i <= nbLines; i++){
         ctx.beginPath();
         ctx.moveTo(-50, leftYPos);
         // + 5 so that we don't see the rectangular end of the line
@@ -35,10 +35,10 @@ function draw(){
     }
 
     // Draws lines from one point on the right of the canvas (50px right of the border) to several points on the left on the canvas (on the border)
-    for(let i=0; i<=nbLines; i++){
+    for(let i = 0; i <= nbLines; i++){
         ctx.beginPath();
         ctx.moveTo(canvas.width + 50, rightYPos);
-        // - 5 so that we don't see the rectangular end of the line
+        // -5 so that we don't see the rectangular end of the line
         ctx.lineTo(-5, i*space - rightYPos);
         ctx.stroke();
     }
@@ -54,7 +54,7 @@ function draw(){
     }
 
     // Conditions to meet to invert movement of the origins of the lines
-    if(leftYPos > limit*2 || rightYPos > limit*2){
+    if(leftYPos > limit * 2 || rightYPos > limit * 2){
         invert = 1;
     }
     else if(leftYPos < -limit|| rightYPos < -limit){
